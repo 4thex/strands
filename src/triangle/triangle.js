@@ -29,7 +29,8 @@ const triangle = (conf) => {
 
     return {
         size: size.value,
-        sort
+        sort,
+        vertices
     };
 };
 
