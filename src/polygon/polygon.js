@@ -35,9 +35,9 @@ const polygon = (conf) => {
         let x2 = v2[1].x-v2[0].x;
         let y1 = v1[1].y-v1[0].y;
         let y2 = v2[1].y-v2[0].y;
-        
+
         // arccos
-        let angle = Math.acos(v1[])
+        // let angle = Math.acos(v1[])
     };
 
     return {
