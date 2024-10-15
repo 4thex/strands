@@ -10,8 +10,25 @@ const vector = conf => {
         return result;
     };
 
+    const dot = v2 => {
+        let x1 = points[1].x-points[0].x;
+        let y1 = points[1].y-points[0].y;
+        let x2 = v2.points[1].x-v2.points[0].x;
+        let y2 = v2.points[1].y-v2.points[0].y;
+        let result = x1*x2+y1*y2;
+        return result;
+    };
+
+    const angle = v2 => {
+        let result = Math.acos(dot(v2)/(length()*v2.length));
+        return result;
+    };
+
     return {
-        get length() { return length(); }
+        get length() { return length(); },
+        points,
+        dot,
+        angle
     };
 };
 
