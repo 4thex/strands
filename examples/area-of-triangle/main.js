@@ -13,7 +13,7 @@ window.addEventListener('load', event => {
     svg.setAttribute("viewBox", "0 0 1000 1000");
     svg.setAttribute("fill", "gray");
     svg.setAttribute("stroke", "black");
-    let p = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    let p = document.createElement("polygon");
     let points = vertices.map(v => {
         return `${v.x},${v.y}`;
     }).join(" ");
