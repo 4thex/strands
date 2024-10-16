@@ -33,7 +33,7 @@ describe('vector', () => {
             expect(dot).toBe(-8);
         });
     });
-    fdescribe('angle', () => {
+    describe('angle', () => {
         it('returns the angle to another vectors', () => {
             let v1 = vector({points: [
                 { x: 0, y: 0 },
@@ -44,8 +44,7 @@ describe('vector', () => {
                 { x: 2, y: 2 }
             ]});
             let angle = v1.angle(v2);
-            // Expected 2.356194490192345 to be 2.6666666666666665?
-            expect(angle).toBe(360/135);
+            expect(angle).toBe(Math.PI*2*135/360);
         });
     });
 });

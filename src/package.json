@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doc": "jsdoc strands.es6.js"
+    "doc": "jsdoc index.js"
   },
   "author": "",
   "license": "MIT",
