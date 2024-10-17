@@ -7,9 +7,9 @@ window.addEventListener('load', event => {
     const sizeElement = document.querySelector('#size');
     
     let vertices = [
-        { x: 0, y: 0},
-        { x: 400, y: 0},
-        { x: 200, y: 200}
+        { x: 2, y: 2},
+        { x: 5, y: 2},
+        { x: 3.5, y: 4}
     ];
     let t = triangle({ vertices });
     let vectors = vertices.reduce((acc, value, index, array) => {
@@ -25,19 +25,8 @@ window.addEventListener('load', event => {
         result.push(vector({points}));
         return result;
     });
-    let r = renderer();
-    r.render(figureElement, vectors);
+    let r = renderer({document, element: figureElement});
+    r.render(vectors);
 
-    // let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    // svg.setAttribute("viewBox", "0 0 1000 1000");
-    // svg.setAttribute("fill", "lightgray");
-    // svg.setAttribute("stroke", "black");
-    // let p = document.createElement("polygon");
-    // let points = vertices.map(v => {
-    //     return `${v.x},${v.y}`;
-    // }).join(" ");
-    // p.setAttribute("points", points);
-    // svg.appendChild(p);
-    // figureElement.innerHTML = svg.outerHTML;
     sizeElement.innerHTML = `size = ${t.size}`;
 });
