@@ -1,6 +1,21 @@
 * {
     font-family: sans-serif;
+
 }
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#size {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
 #figure {
+    margin: 1dvb;
+    height: 90dvh;
+    width: 90dvh;
     border: thin solid black;
 }
