@@ -70,10 +70,11 @@ const renderer = conf => {
         element.appendChild(tick);
     };
  
-    const render = (vectors) => {
+    const render = polygon => {
+        let vertices = polygon.vertices;
         let p = document.createElement("polygon");
-        let points = vectors.map(v => {
-            return `${v.points[0].x},${v.points[0].y} ${v.points[1].x},${v.points[1].y}`;
+        let points = vertices.map(point => {
+            return `${point.x},${point.y}`;
         }).join(" ");
         p.setAttribute("points", points);
         g.appendChild(p);    

@@ -1,5 +1,4 @@
 import triangle from './node_modules/strands/triangle/index.js';
-import vector from './node_modules/strands/vector/index.js';
 import renderer from './node_modules/strands/renderer/index.js';
 
 window.addEventListener('load', event => {
@@ -9,24 +8,11 @@ window.addEventListener('load', event => {
     let vertices = [
         { x: 2, y: 2},
         { x: 5, y: 2},
-        { x: 3.5, y: 4}
+        { x: 7, y: 7}
     ];
     let t = triangle({ vertices });
-    let vectors = vertices.reduce((acc, value, index, array) => {
-        let result;
-        let points;
-        if(index == 1) {
-            result = [];
-            points = [acc, value];
-        } else {
-            result = acc;
-            points = [array[index -1], value];
-        }
-        result.push(vector({points}));
-        return result;
-    });
     let r = renderer({document, element: figureElement});
-    r.render(vectors);
+    r.render(t);
 
     sizeElement.innerHTML = `size = ${t.size}`;
 });
