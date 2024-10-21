@@ -34,7 +34,7 @@ describe('vector', () => {
         });
     });
     describe('angle', () => {
-        it('returns the angle to another vectors', () => {
+        it('returns the acute angle to another vectors', () => {
             let v1 = vector({points: [
                 { x: 0, y: 0 },
                 { x: 4, y: 0 }
@@ -44,7 +44,20 @@ describe('vector', () => {
                 { x: 2, y: 2 }
             ]});
             let angle = v1.angle(v2);
-            expect(angle).toBe(Math.PI*2*135/360);
+            expect(angle).toBeCloseTo(Math.PI*2*135/360, 4);
+        });
+        it('returns the obtuse angle to another vectors', () => {
+            let v1 = vector({points: [
+                { x: 0, y: 0 },
+                { x: 2, y: 0 }
+            ]});
+            let v2 = vector({points: [
+                { x: 2, y: 0 },
+                { x: 4, y: 2 }
+            ]});
+            let a = v1.angle(v2);
+            console.log(`angle = ${a*180/Math.PI} degrees`);
+            expect(a).toBeCloseTo(Math.PI*2*45/360, 4);
         });
     });
 });

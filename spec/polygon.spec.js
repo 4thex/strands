@@ -69,7 +69,7 @@ describe('polygon', () => {
             
         });
 
-        fit('returns three triangles from a concave pentagon', () => {
+        it('returns three triangles from a concave pentagon', () => {
             let p = polygon({
                 vertices: [
                     { x: 0, y: 0 },
@@ -100,4 +100,15 @@ describe('polygon', () => {
         });
 
     });
+
+    // describe('angle', () => {
+    //     it('returns angle > 180 degrees', () => {
+    //         let vertices = [
+    //             { x: 0, y: 0 },
+    //             { x: 3, y: 0 },
+    //             { x: 1, y: 1 }
+    //         ];
+    //         let angle = Polygon
+    //     });
+    // });
 });

@@ -1,4 +1,5 @@
 import triangle from 'triangle';
+import vector from 'vector';
 const polygon = (conf) => {
     const vertices = conf.vertices;
 
@@ -19,25 +20,25 @@ const polygon = (conf) => {
 
     // Flip an ear off
     const flip = vertices => {
-        let ear = vertices.slice(0, 3);
+        let index=0;
+        let ear;
+        // Find first convex ear
+        do {
+            ear = vertices.slice(index, index+3);
+            index++;
+        } while (index<vertices.length-2 && angle(ear)<0);
         let remains = vertices.slice();
-        remains.splice(1, 1);
+        remains.splice(index+1, 1);
         return { ear, remains };
     };
 
     // return the angle between first and second vector
     const angle = vertices => {
         // first vector
-        let v1 = [vertices[0], vertices[1]];
+        let v1 = vector({points: vertices.slice(0, 2)});
         // second vector
-        let v2 = [vertices[1], vertices[2]];
-        let x1 = v1[1].x-v1[0].x;
-        let x2 = v2[1].x-v2[0].x;
-        let y1 = v1[1].y-v1[0].y;
-        let y2 = v2[1].y-v2[0].y;
-
-        // arccos
-        // let angle = Math.acos(v1[])
+        let v2 = vector({points: vertices.slice(1)});
+        return v1.angle(v2);
     };
 
     return {

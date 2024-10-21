@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "exports": {
-    ".": "./inex.js"
+    ".": "./index.js"
   },
   "main": "index.js",
   "scripts": {
