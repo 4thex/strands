@@ -26,9 +26,9 @@ const polygon = (conf) => {
         do {
             ear = vertices.slice(index, index+3);
             index++;
-        } while (index<vertices.length-2 && angle(ear)<0);
+        } while (index<vertices.length-2 && angle(ear)>Math.PI/2);
         let remains = vertices.slice();
-        remains.splice(index+1, 1);
+        remains.splice(index, 1);
         return { ear, remains };
     };
 

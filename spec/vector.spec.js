@@ -34,7 +34,7 @@ describe('vector', () => {
         });
     });
     describe('angle', () => {
-        it('returns the acute angle to another vectors', () => {
+        it('returns the obtuse angle to another vectors', () => {
             let v1 = vector({points: [
                 { x: 0, y: 0 },
                 { x: 4, y: 0 }
@@ -46,7 +46,7 @@ describe('vector', () => {
             let angle = v1.angle(v2);
             expect(angle).toBeCloseTo(Math.PI*2*135/360, 4);
         });
-        it('returns the obtuse angle to another vectors', () => {
+        it('returns the acute angle to another vectors', () => {
             let v1 = vector({points: [
                 { x: 0, y: 0 },
                 { x: 2, y: 0 }

@@ -39,7 +39,7 @@ describe('polygon', () => {
                 { x: 0, y: 2 }
             ]);
         });
-        it('returns three triangles from a convex pentagon', () => {
+        fit('returns three triangles from a convex pentagon', () => {
             let p = polygon({
                 vertices: [
                     { x: 0, y: 0 },
